@@ -1,5 +1,6 @@
 package com.example.slidebuttons
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         h_btn1.setOnClickListener {
             Toast.makeText(this,"Button 1 Pressed",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,FavLayoutActivity::class.java)
+            startActivity(intent)
         }
         h_btn2.setOnClickListener {
             Toast.makeText(this,"Button 2 Pressed",Toast.LENGTH_SHORT).show()
