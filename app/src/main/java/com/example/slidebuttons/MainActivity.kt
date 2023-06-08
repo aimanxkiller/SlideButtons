@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val h_btn1 = binding.hdnBtn1
         val h_btn2 = binding.hdnBtn2
         val h_btn3 = binding.hdnBtn3
+        val next_btn = binding.nextButton
         val swiper = binding.swiperView
 
         btn.setOnClickListener {
@@ -33,8 +34,6 @@ class MainActivity : AppCompatActivity() {
 
         h_btn1.setOnClickListener {
             Toast.makeText(this,"Button 1 Pressed",Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,FavLayoutActivity::class.java)
-            startActivity(intent)
         }
         h_btn2.setOnClickListener {
             Toast.makeText(this,"Button 2 Pressed",Toast.LENGTH_SHORT).show()
@@ -42,6 +41,13 @@ class MainActivity : AppCompatActivity() {
         h_btn3.setOnClickListener {
             Toast.makeText(this,"Button 3 Pressed",Toast.LENGTH_SHORT).show()
         }
+
+        next_btn.setOnClickListener {
+            Toast.makeText(this,"Button Next Pressed",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,FavLayoutActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

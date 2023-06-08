@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.daimajia.swipe.SwipeLayout
 
-class TesterAdapter(private val context: FavLayoutActivity, private val list: List<People>) :RecyclerView.Adapter<TesterAdapter.ViewHolder>() {
+class TesterAdapter(private val context: FavLayoutActivity, private var list: List<People>) :RecyclerView.Adapter<TesterAdapter.ViewHolder>() {
 
 
     //Reference for items
@@ -23,6 +23,12 @@ class TesterAdapter(private val context: FavLayoutActivity, private val list: Li
         val h_btn2:ImageView = itemView.findViewById(R.id.hdn_btn_2)
         val h_btn3:ImageView = itemView.findViewById(R.id.hdn_btn_3)
         val swiper:SwipeLayout = itemView.findViewById(R.id.swiper_view)
+        val pin:ImageView = itemView.findViewById(R.id.icon_pin)
+    }
+
+    fun setData(peopleList: List<People>) {
+        this.list = peopleList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,6 +41,12 @@ class TesterAdapter(private val context: FavLayoutActivity, private val list: Li
         holder.name.text = data.name
         holder.acc.text = data.age.toString()
         holder.bankName.text = data.id
+
+        if (list[position].pin){
+            holder.pin.visibility = View.VISIBLE
+        }else{
+            holder.pin.visibility = View.GONE
+        }
 
         holder.btn.setOnClickListener {
             if (holder.swiper.openStatus == SwipeLayout.Status.Open){
