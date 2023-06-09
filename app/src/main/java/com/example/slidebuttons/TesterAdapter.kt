@@ -11,6 +11,11 @@ import com.daimajia.swipe.SwipeLayout
 
 class TesterAdapter(private val context: FavLayoutActivity, private var list: List<People>) :RecyclerView.Adapter<TesterAdapter.ViewHolder>() {
 
+    private var listener: ListClickListener? = null
+
+    fun setItemClickListener(listener: ListClickListener) {
+        this.listener = listener
+    }
 
     //Reference for items
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
@@ -57,7 +62,7 @@ class TesterAdapter(private val context: FavLayoutActivity, private var list: Li
         }
 
         holder.h_btn1.setOnClickListener {
-            Toast.makeText(context, "Button 1 Pressed at $position", Toast.LENGTH_SHORT).show()
+            listener?.onItemPin(data.id)
         }
         holder.h_btn2.setOnClickListener {
             Toast.makeText(context,"Button 2 Pressed at $position", Toast.LENGTH_SHORT).show()
