@@ -91,7 +91,8 @@
             android:layout_centerVertical="true"
             android:src="@drawable/icon_3dots"/>
 
-        <View
+        <ImageView
+            android:id="@+id/item_list_divider"
             android:layout_below="@id/tv_bank_name"
             android:layout_width="match_parent"
             android:layout_height="1dp"

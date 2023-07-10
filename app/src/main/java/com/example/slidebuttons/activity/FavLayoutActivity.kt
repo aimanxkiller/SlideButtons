@@ -1,4 +1,4 @@
-package com.example.slidebuttons
+package com.example.slidebuttons.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,17 +7,21 @@ import android.text.TextWatcher
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.slidebuttons.ListClickListener
+import com.example.slidebuttons.People
+import com.example.slidebuttons.adapter.RecentTransactionAdapter
+import com.example.slidebuttons.adapter.TesterAdapter
 import com.example.slidebuttons.databinding.FavLayoutBinding
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
-class FavLayoutActivity : AppCompatActivity(),ListClickListener {
+class FavLayoutActivity : AppCompatActivity(), ListClickListener {
 
     lateinit var sortedList:List<People>
     lateinit var recyclerView:RecyclerView
     lateinit var search:TextInputEditText
     lateinit var list:List<People>
-    lateinit var adapter:TesterAdapter
+    lateinit var adapter: TesterAdapter
 
     private lateinit var binding:FavLayoutBinding
 

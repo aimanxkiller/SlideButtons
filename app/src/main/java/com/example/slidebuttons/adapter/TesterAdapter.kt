@@ -1,4 +1,4 @@
-package com.example.slidebuttons
+package com.example.slidebuttons.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.daimajia.swipe.SwipeLayout
+import com.example.slidebuttons.ListClickListener
+import com.example.slidebuttons.People
+import com.example.slidebuttons.R
+import com.example.slidebuttons.activity.FavLayoutActivity
 
 class TesterAdapter(private val context: FavLayoutActivity, private var list: List<People>) :RecyclerView.Adapter<TesterAdapter.ViewHolder>() {
 
@@ -22,13 +26,14 @@ class TesterAdapter(private val context: FavLayoutActivity, private var list: Li
         val name:TextView = itemView.findViewById(R.id.tv_name)
         val acc:TextView = itemView.findViewById(R.id.tv_account_no)
         val bankName:TextView = itemView.findViewById(R.id.tv_bank_name)
+        val divider:ImageView = itemView.findViewById(R.id.item_list_divider)
 
         val btn:ImageView = itemView.findViewById(R.id.btn_3dots)
         val h_btn1:ImageView = itemView.findViewById(R.id.hdn_btn_1)
         val h_btn2:ImageView = itemView.findViewById(R.id.hdn_btn_2)
         val h_btn3:ImageView = itemView.findViewById(R.id.hdn_btn_3)
         val swiper:SwipeLayout = itemView.findViewById(R.id.swiper_view)
-        val pin:ImageView = itemView.findViewById(R.id.icon_pin)
+        val pin:View = itemView.findViewById(R.id.icon_pin)
     }
 
     fun setData(peopleList: List<People>) {
@@ -69,6 +74,10 @@ class TesterAdapter(private val context: FavLayoutActivity, private var list: Li
         }
         holder.h_btn3.setOnClickListener {
             Toast.makeText(context,"Button 3 Pressed at $position", Toast.LENGTH_SHORT).show()
+        }
+
+        if (position == list.size-1){
+            holder.divider.visibility = View.GONE
         }
     }
 

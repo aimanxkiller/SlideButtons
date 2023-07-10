@@ -1,10 +1,11 @@
-package com.example.slidebuttons
+package com.example.slidebuttons.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.slidebuttons.R
 
 class RecentTransactionAdapter(private val mainList: ArrayList<String>) : RecyclerView.Adapter<RecentTransactionAdapter.ViewHolder>() {
 

@@ -1,4 +1,4 @@
-package com.example.slidebuttons
+package com.example.slidebuttons.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         next_btn.setOnClickListener {
             Toast.makeText(this,"Button Next Pressed",Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,FavLayoutActivity::class.java)
+            val intent = Intent(this, FavLayoutActivity::class.java)
             startActivity(intent)
         }
 
