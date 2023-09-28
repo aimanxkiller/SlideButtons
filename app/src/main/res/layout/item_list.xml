@@ -38,6 +38,7 @@
 
     <!-- Surface View Start -->
     <RelativeLayout
+        android:id="@+id/surface_view"
         android:paddingVertical="5dp"
         android:paddingStart="5dp"
         android:paddingEnd="0dp"
